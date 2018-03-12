@@ -17,8 +17,8 @@ setup(name='tweetfeels',
       long_description=long_description,
       author='Thomas Chen',
       author_email='tkchen@gmail.com',
-      url='https://github.com/uclatommy/tweetfeels',
-      download_url='https://github.com/uclatommy/tweetfeels/tarball/{}'.format(
+      url='https://github.com/kvassilakakis/tweetfeels',
+      download_url='https://github.com/kvassilakakis/tweetfeels/tarball/{}'.format(
           __version__
           ),
       packages=['tweetfeels'],
