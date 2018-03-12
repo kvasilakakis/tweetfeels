@@ -86,7 +86,7 @@ class TweetFeels(object):
         _auth = OAuthHandler(credentials[0], credentials[1])
         _auth.set_access_token(credentials[2], credentials[3])
         self._listener = TweetFeels._listener_factory(self)
-        self._stream = TweetFeels._stream_factory(_auth, self._listener)
+        self._stream = Stream(_auth, self._listener, verify=False)
         self.tracking = tracking
         self.lang = ['en']
         self._sentiment = Sentiment(0, 0, 0, 0)
@@ -156,7 +156,7 @@ class TweetFeels(object):
             print('Nothing to track!')
         else:
             self._stream.filter(
-                track=self.tracking, languages=self.lang, async=True
+                track=self.tracking, languages=self.lang, async=True, stall_warnings = True
                 )
 #  This does not work due to upstream bug in tweepy 3.5.0. They have fixed it in
 #  https://github.com/tweepy/tweepy/pull/783
